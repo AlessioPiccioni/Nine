@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Nine</string>
+    <string name="guess_the_permutation">Guess the permutation!</string>
+    <string name="your_guess">Your guess</string>
+    <string name="distances">Distances</string>
+</resources>
