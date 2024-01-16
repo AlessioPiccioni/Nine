@@ -28,6 +28,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.piccionialessio.nine.R
+import com.piccionialessio.nine.ui.theme.cardBackground
 
 @Preview(showBackground = true)
 @Composable
@@ -63,7 +64,7 @@ fun Row1() {
                     .size(40.dp, 40.dp)
                     .padding(4.dp)
                     .fillMaxWidth(),
-                colors = CardDefaults.cardColors(containerColor = Color.White)
+                colors = CardDefaults.cardColors(containerColor = cardBackground)
             ) {
                 Text(
                     text = "0",
@@ -82,7 +83,7 @@ fun Row1() {
 @Preview
 @Composable
 fun Guess(){
-    Card(colors = CardDefaults.cardColors(containerColor = Color.White),
+    Card(colors = CardDefaults.cardColors(containerColor = cardBackground),
         border = BorderStroke(1.dp, Color.Black),
         modifier = Modifier.padding(8.dp),
 
@@ -100,7 +101,7 @@ fun Guess(){
 
 @Composable
 fun Distance() {
-    Card(colors = CardDefaults.cardColors(containerColor = Color.White),
+    Card(colors = CardDefaults.cardColors(cardBackground),
         border = BorderStroke(1.dp, Color.Black),
         modifier = Modifier.padding(8.dp),
 
