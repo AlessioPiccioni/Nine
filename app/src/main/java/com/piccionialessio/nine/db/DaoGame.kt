@@ -13,7 +13,7 @@ interface DaoGame {
 
     //Per ottenere i vincitori classificati in base al tempo
     @Query("SELECT * FROM Game WHERE success = 'ok' ORDER BY time")
-    fun getClassifiedResults(): LiveData<MutableList<Game>>
+    fun getBestResults(): LiveData<MutableList<Game>>
 
     //Per ottenere tutta la lista di tentativi
     @Query("SELECT * FROM Game")
