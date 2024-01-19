@@ -26,7 +26,7 @@ class GameViewModel(application: Application): AndroidViewModel(application) {
         return repository.getBestResult()
     }
 
-    fun getAllTries(): LiveData<MutableList<Game>> {
-        return repository.getAllTries()
+    fun getAllGames(): LiveData<MutableList<Game>> {
+        return repository.getAllGames()
     }
 }

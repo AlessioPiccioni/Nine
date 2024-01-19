@@ -11,7 +11,7 @@ class GameRepository(private val daoGame: DaoGame) {
         return daoGame.getBestResults()
     }
 
-    fun getAllTries(): LiveData<MutableList<Game>> {
-        return daoGame.getAllTries()
+    fun getAllGames(): LiveData<MutableList<Game>> {
+        return daoGame.getAllGames()
     }
 }

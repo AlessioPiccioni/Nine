@@ -17,7 +17,7 @@ interface DaoGame {
 
     //Per ottenere tutta la lista di tentativi
     @Query("SELECT * FROM Game")
-    fun getAllTries(): LiveData<MutableList<Game>>
+    fun getAllGames(): LiveData<MutableList<Game>>
 
     //TODO: aggiungi la possibilita di vedere i tentativi di un certo nome, un filtro per nome e anche per data
 }
