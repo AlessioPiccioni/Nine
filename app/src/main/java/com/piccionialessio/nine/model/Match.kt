@@ -1,13 +1,14 @@
 package com.piccionialessio.nine.model
 
-import kotlin.math.abs
+import kotlin.math.min
 
-class Match {
+data class Match(
+    val permutation: IntArray = IntArray(9),
+    val firstTry: IntArray = IntArray(9),
+    val secondTry: IntArray = IntArray(9),
+    val distance: IntArray = IntArray(9)
+    ) {
     //di ogni tentativo memorizziamo la permutazione da indovinare, i 2 tentativi e il vettore delle distanze
-    private var permutation = ArrayList<Int>(9)
-    private var firstTry = ArrayList<Int>(9)
-    private var secondTry = ArrayList<Int>(9)
-    private var distance = ArrayList<Int>(9)
 
     init {
         var rnd: Int
@@ -19,18 +20,16 @@ class Match {
         }
     }
 
-    fun getPermutation(): ArrayList<Int>{
-        return permutation
-    }
-
     fun setFirst(ftry: ArrayList<Int>) {
         firstTry = ftry
         computeDistance()
     }
 
     fun computeDistance() {
+        var pos: Int
         for (i in distance.indices) {
-            distance[i] = abs(i - permutation.find { it == firstTry[i] }!!)
+            pos = permutation.find { it == firstTry[i] }!!
+            distance[i] = min((i - pos) % 9, (pos - i) % 9)
         }
     }
 
