@@ -28,11 +28,12 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.piccionialessio.nine.R
+import com.piccionialessio.nine.model.MatchViewModel
 import com.piccionialessio.nine.ui.theme.cardBackground
 
-@Preview(showBackground = true)
+//@Preview(showBackground = true)
 @Composable
-fun GameScreen() {
+fun GameScreen(viewModel: MatchViewModel) {
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.spacedBy(8.dp)
@@ -41,22 +42,22 @@ fun GameScreen() {
             .fillMaxWidth()
             .size(24.dp))
         Text(text = stringResource(R.string.guess_the_permutation))
-        Row1()
+        Row1(viewModel.match.value.permutation)
         Guess()
         Distance()
         Guess()
     }
 }
 
-@Preview(showBackground = true)
+//@Preview(showBackground = true)
 @Composable
-fun Row1() {
+fun Row1(permutation: IntArray) {
     var intArray = Array<Int>(9, { it -> 0 })
     LazyRow(
         modifier = Modifier
             .padding(8.dp),
         horizontalArrangement = Arrangement.SpaceBetween) {
-        itemsIndexed(intArray) { index, item ->
+        itemsIndexed(permutation) { index, item ->
             Card(
                 shape = RoundedCornerShape(8.dp),
                 border = BorderStroke(1.dp, Color.Blue),

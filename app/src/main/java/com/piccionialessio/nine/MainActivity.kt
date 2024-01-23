@@ -32,7 +32,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = background
                 ) {
-                    //GameScreen()
+                    GameScreen(vm)
 
                 }
             }
