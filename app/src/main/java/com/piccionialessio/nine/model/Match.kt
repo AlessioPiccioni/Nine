@@ -20,8 +20,8 @@ data class Match(
         }
     }
 
-    fun setFirst(ftry: ArrayList<Int>) {
-        firstTry = ftry
+    fun setFirst(ftry: IntArray) {
+        ftry.copyInto(firstTry)
         computeDistance()
     }
 
